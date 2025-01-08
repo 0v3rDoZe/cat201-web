@@ -1,38 +1,27 @@
 package com.example.api;
 
+import com.example.service.UserService;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.google.gson.reflect.TypeToken;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.lang.reflect.Type;
-import java.util.List;
 import java.util.Map;
 
 @WebServlet("/api/admin-login")
 public class AdminLoginServlet extends HttpServlet {
-    private static final String ADMIN_DATA_FILE = "src/main/resources/adminData.json";
-    private List<Map<String, String>> admins;
+    private UserService adminService;
 
     @Override
     public void init() throws ServletException {
         super.init();
         System.out.println("AdminLoginServlet initialized.");
-
-        // Load admin data from adminData.json
-        try (BufferedReader reader = new BufferedReader(new FileReader(ADMIN_DATA_FILE))) {
-            Type adminListType = new TypeToken<List<Map<String, String>>>() {}.getType();
-            admins = new Gson().fromJson(reader, adminListType);
-        } catch (IOException e) {
-            throw new ServletException("Unable to read admin data", e);
-        }
+        adminService = new UserService("src/main/resources/adminData.json");
     }
 
     @Override
@@ -58,8 +47,7 @@ public class AdminLoginServlet extends HttpServlet {
         System.out.println("AdminLoginServlet POST request received with parameters: " + email + " = " + password);
 
         // Validate admin login
-        boolean loginStatus = admins.stream()
-                .anyMatch(admin -> admin.get("email").equals(email) && admin.get("password").equals(password));
+        boolean loginStatus = adminService.validateLogin(email, password);
 
         // Create JSON response
         JsonObject jsonResponse = new JsonObject();
@@ -70,5 +58,7 @@ public class AdminLoginServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.write(gson.toJson(jsonResponse));
         out.flush();
+
+        System.out.println("AdminLoginServlet response: " + jsonResponse.toString());
     }
 }
