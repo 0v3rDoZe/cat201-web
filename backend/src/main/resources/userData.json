@@ -4,7 +4,7 @@
     "password": "password123"
   },
   {
-    "email": "admin@example.com",
-    "password": "adminpassword"
+    "email": "user2@example.com",
+    "password": "password456"
   }
 ]
