@@ -1,0 +1,40 @@
+.car-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px;
+  width: 300px;
+  text-align: center;
+}
+
+.car-card-image-container {
+  position: relative;
+}
+
+.car-card-image {
+  width: 100%;
+  height: auto;
+}
+
+.car-card-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.car-card-button:first-of-type {
+  left: 0;
+}
+
+.car-card-button:last-of-type {
+  right: 0;
+}
+
+.car-card-info {
+  padding: 16px;
+}
