@@ -27,6 +27,27 @@ public class UserService {
         }
     }
 
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void addUser(User user) {
+        users.add(user);
+    }
+
+    public void updateUser(User updatedUser) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getEmail().equals(updatedUser.getEmail())) {
+                users.set(i, updatedUser);
+                return;
+            }
+        }
+    }
+
+    public void deleteUser(String email) {
+        users.removeIf(user -> user.getEmail().equals(email));
+    }
+
     public boolean validateLogin(String email, String password) {
         return users.stream()
                 .anyMatch(user -> user.getEmail().equals(email) && user.getPassword().equals(password));

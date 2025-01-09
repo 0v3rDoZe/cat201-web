@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Car A",
+    "price": 10.99,
+    "condition": "Excellent Condition",
+    "email": "ownerA@example.com",
+    "type": "Sedan",
+    "mileage": 5000,
+    "transmission": "Auto",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983_Toyota_Corolla_Levin.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+    ]
+  },
+  {
+    "name": "Car B",
+    "price": 12.99,
+    "condition": "Good Condition",
+    "email": "ownerB@example.com",
+    "type": "SUV",
+    "mileage": 10000,
+    "transmission": "Manual",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983_Toyota_Corolla_Levin.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+    ]
+  },
+  {
+    "name": "Car C",
+    "price": 9.99,
+    "condition": "Fair Condition",
+    "email": "ownerC@example.com",
+    "type": "Hatchback",
+    "mileage": 15000,
+    "transmission": "Auto",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983_Toyota_Corolla_Levin.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+    ]
+  },
+  {
+    "name": "Car D",
+    "price": 8.99,
+    "condition": "Fair Condition",
+    "email": "ownerD@example.com",
+    "type": "Hatchback",
+    "mileage": 20000,
+    "transmission": "Manual",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+    ]
+  },
+  {
+    "name": "Car E",
+    "price": 15.99,
+    "condition": "Good Condition",
+    "email": "ownerE@example.com",
+    "type": "Convertible",
+    "mileage": 3000,
+    "transmission": "Auto",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+    ]
+  },
+  {
+    "name": "Car F",
+    "price": 7.99,
+    "condition": "Fair Condition",
+    "email": "ownerF@example.com",
+    "type": "Coupe",
+    "mileage": 25000,
+    "transmission": "Manual",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+    ]
+  },
+  {
+    "name": "Car G",
+    "price": 11.99,
+    "condition": "Excellent Condition",
+    "email": "ownerG@example.com",
+    "type": "Convertible",
+    "mileage": 6000,
+    "transmission": "Auto",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+    ]
+  },
+  {
+    "name": "Car H",
+    "price": 13.99,
+    "condition": "Good Condition",
+    "email": "ownerH@example.com",
+    "type": "SUV",
+    "mileage": 11000,
+    "transmission": "Manual",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+    ]
+  },
+  {
+    "name": "Car I",
+    "price": 10.49,
+    "condition": "Fair Condition",
+    "email": "ownerI@example.com",
+    "type": "Hatchback",
+    "mileage": 16000,
+    "transmission": "Auto",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+    ]
+  },
+  {
+    "name": "Car J",
+    "price": 9.49,
+    "condition": "Fair Condition",
+    "email": "ownerJ@example.com",
+    "type": "Hatchback",
+    "mileage": 21000,
+    "transmission": "Manual",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+    ]
+  },
+  {
+    "name": "Car K",
+    "price": 15.0,
+    "condition": "Excellent Condition",
+    "email": "testAdmin@example.com",
+    "type": "Sedan",
+    "mileage": 15000,
+    "transmission": "Manual",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/1983_Toyota_Corolla-Levin_01.jpg/200px-1983-Toyota_Corolla-Levin_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/2023_Toyota_Supra_%282%29.jpg/1920px-2023_Toyota_Supra_%282%29.jpg"
+    ]
+  },
+  {
+    "name": "Car L",
+    "price": 14000.0,
+    "condition": "Good Condition",
+    "email": "user4@example.com",
+    "type": "Hatchback",
+    "mileage": 15000,
+    "transmission": "Manual",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/2023_Toyota_Supra_%282%29.jpg/1920px-2023_Toyota_Supra_%282%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/1983_Toyota_Corolla-Levin_01.jpg/200px-1983-Toyota_Corolla-Levin_01.jpg"
+    ]
+  }
+]

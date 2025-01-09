@@ -1,10 +1,10 @@
 package com.example.model;
 
-public class User {
+public class Admin {
     private String email;
     private String password;
 
-    public User(String email, String password) {
+    public Admin(String email, String password) {
         this.email = email;
         this.password = password;
     }

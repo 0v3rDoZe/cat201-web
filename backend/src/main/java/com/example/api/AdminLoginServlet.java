@@ -1,6 +1,6 @@
 package com.example.api;
 
-import com.example.service.UserService;
+import com.example.service.AdminService;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import javax.servlet.ServletException;
@@ -15,13 +15,13 @@ import java.util.Map;
 
 @WebServlet("/api/admin-login")
 public class AdminLoginServlet extends HttpServlet {
-    private UserService adminService;
+    private AdminService adminService;
 
     @Override
     public void init() throws ServletException {
         super.init();
         System.out.println("AdminLoginServlet initialized.");
-        adminService = new UserService("src/main/resources/adminData.json");
+        adminService = new AdminService("src/main/resources/adminData.json");
     }
 
     @Override
