@@ -128,31 +128,5 @@
       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
     ]
-  },
-  {
-    "name": "Car K",
-    "price": 15.0,
-    "condition": "Excellent Condition",
-    "email": "testAdmin@example.com",
-    "type": "Sedan",
-    "mileage": 15000,
-    "transmission": "Manual",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/1983_Toyota_Corolla-Levin_01.jpg/200px-1983-Toyota_Corolla-Levin_01.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/2023_Toyota_Supra_%282%29.jpg/1920px-2023_Toyota_Supra_%282%29.jpg"
-    ]
-  },
-  {
-    "name": "Car L",
-    "price": 14000.0,
-    "condition": "Good Condition",
-    "email": "user4@example.com",
-    "type": "Hatchback",
-    "mileage": 15000,
-    "transmission": "Manual",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/2023_Toyota_Supra_%282%29.jpg/1920px-2023_Toyota_Supra_%282%29.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/1983_Toyota_Corolla-Levin_01.jpg/200px-1983-Toyota_Corolla-Levin_01.jpg"
-    ]
   }
 ]

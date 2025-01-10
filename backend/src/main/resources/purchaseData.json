@@ -1,0 +1,23 @@
+[
+  {
+    "carName": "Car K",
+    "price": 15000.0,
+    "condition": "Excellent Condition",
+    "ownerEmail": "ownerA@example.com",
+    "type": "Sedan",
+    "mileage": 2000.0,
+    "transmission": "Manual",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/1994_Mazda_RX-7_R2_in_Vintage_Red%2C_front_left_%28Lime_Rock%29.jpg/1920px-1994_Mazda_RX-7_R2_in_Vintage_Red%2C_front_left_%28Lime_Rock%29.jpg"
+      ,"https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Toyota_Supra_%282492707827%29.jpg/1280px-Toyota_Supra_%282492707827%29.jpg"
+    ],
+    "userName": "Matthew Khoo",
+    "userEmail": "user@example.com",
+    "paymentMethod": "Cash on Delivery",
+    "paymentStatus": "Pending",
+    "cardNumber": "",
+    "bankNumber": "",
+    "leaseDuration": "",
+    "shippingAddress": "Jalan Universiti, 11700 Gelugor, Pulau Pinang"
+  }
+]

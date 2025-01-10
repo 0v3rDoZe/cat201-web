@@ -2,6 +2,8 @@ package com.example.api;
 
 import com.example.model.User;
 import com.example.service.UserService;
+import com.example.service.PurchaseService;
+import com.example.service.TestDriveService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -19,16 +21,21 @@ import java.util.Map;
 @WebServlet("/api/users")
 public class UserServlet extends HttpServlet {
     private UserService userService;
+    private PurchaseService purchaseService;
+    private TestDriveService testDriveService;
 
     @Override
     public void init() throws ServletException {
         super.init();
         userService = new UserService("src/main/resources/userData.json");
+        purchaseService = new PurchaseService("src/main/resources/purchaseData.json");
+        testDriveService = new TestDriveService();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
 
         // Create JSON response
@@ -45,6 +52,9 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+
         // Read request body
         StringBuilder sb = new StringBuilder();
         try (BufferedReader reader = request.getReader()) {
@@ -77,6 +87,9 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+
         // Read request body
         StringBuilder sb = new StringBuilder();
         try (BufferedReader reader = request.getReader()) {
@@ -109,6 +122,9 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+
         // Read request body
         StringBuilder sb = new StringBuilder();
         try (BufferedReader reader = request.getReader()) {
@@ -126,8 +142,16 @@ public class UserServlet extends HttpServlet {
         // Delete user
         userService.deleteUser(email);
 
+        // Remove related purchase data
+        purchaseService.deletePurchasesByUserEmail(email);
+
+        // Remove related test drive data
+        testDriveService.deleteTestDriveRequestsByUserEmail(email);
+
         // Save changes to file
         saveUsersToFile();
+        purchaseService.savePurchasesToFile();
+        testDriveService.saveTestDriveData();
 
         // Create JSON response
         JsonObject jsonResponse = new JsonObject();
