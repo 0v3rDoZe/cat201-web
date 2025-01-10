@@ -2,6 +2,7 @@ package com.example.api;
 
 import com.example.model.Car;
 import com.example.service.CarService;
+import com.example.service.TestDriveService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -19,11 +20,13 @@ import java.util.Map;
 @WebServlet("/api/cars")
 public class CarServlet extends HttpServlet {
     private CarService carService;
+    private TestDriveService testDriveService;
 
     @Override
     public void init() throws ServletException {
         super.init();
         carService = new CarService("src/main/resources/productData.json");
+        testDriveService = new TestDriveService();
     }
 
     @Override
@@ -129,8 +132,12 @@ public class CarServlet extends HttpServlet {
         // Delete car
         carService.deleteCar(name);
 
+        // Remove related test drive data
+        testDriveService.deleteTestDriveRequestsByCarName(name);
+
         // Save changes to file
         saveCarsToFile();
+        testDriveService.saveTestDriveData();
 
         // Create JSON response
         JsonObject jsonResponse = new JsonObject();

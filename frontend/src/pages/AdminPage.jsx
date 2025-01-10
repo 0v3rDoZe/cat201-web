@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/styles.css'; // Import the styles
+import deleteIcon from '../assets/bxs-trash.svg';
 
 function AdminPage() {
   const [users, setUsers] = useState([]);
   const [admins, setAdmins] = useState([]);
+  const [sellers, setSellers] = useState([]);
   const [cars, setCars] = useState([]);
   const [newUser, setNewUser] = useState({ email: '', password: '' });
   const [newAdmin, setNewAdmin] = useState({ email: '', password: '' });
+  const [newSeller, setNewSeller] = useState({ email: '', password: '' });
   const [newCar, setNewCar] = useState({ name: '', price: '', condition: 'Excellent Condition', email: '', type: 'Sedan', mileage: '', transmission: 'Manual', images: [] });
   const [newImageUrl, setNewImageUrl] = useState('');
 
@@ -20,6 +23,11 @@ function AdminPage() {
       .then(response => response.json())
       .then(data => setAdmins(data))
       .catch(error => console.error('Error fetching admins:', error));
+
+    fetch('http://localhost:9090/api/sellers')
+      .then(response => response.json())
+      .then(data => setSellers(data))
+      .catch(error => console.error('Error fetching sellers:', error));
 
     fetch('http://localhost:9090/api/cars')
       .then(response => response.json())
@@ -70,6 +78,27 @@ function AdminPage() {
       }
     } catch (error) {
       console.error('Error adding admin:', error);
+    }
+  };
+
+  const handleAddSeller = async () => {
+    if (!newSeller.email || !newSeller.password) {
+      alert('Please enter both email and password');
+      return;
+    }
+    try {
+      const response = await fetch('http://localhost:9090/api/sellers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newSeller)
+      });
+      const data = await response.json();
+      setSellers([...sellers, data]);
+      setNewSeller({ email: '', password: '' });
+    } catch (error) {
+      console.error('Error adding seller:', error);
     }
   };
 
@@ -132,6 +161,21 @@ function AdminPage() {
     }
   };
 
+  const handleDeleteSeller = async (email) => {
+    try {
+      await fetch('http://localhost:9090/api/sellers', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      });
+      setSellers(sellers.filter(seller => seller.email !== email));
+    } catch (error) {
+      console.error('Error deleting seller:', error);
+    }
+  };
+
   const handleDeleteCar = async (name) => {
     try {
       console.log(`Deleting car with name: ${name}`);
@@ -145,6 +189,15 @@ function AdminPage() {
       const data = await response.json();
       console.log('Delete response:', data);
       setCars(cars.filter(car => car.name !== name));
+
+      // Delete related test drive requests
+      await fetch('http://localhost:9090/api/test-drive', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ carModel: name })
+      });
     } catch (error) {
       console.error('Error deleting car:', error);
     }
@@ -153,16 +206,18 @@ function AdminPage() {
   const buttonStyle = {
     padding: '5px 10px',
     margin: '5px',
-    backgroundColor: '#F59E0B', // yellow-500
+    backgroundColor: '#1E3A8A', // blue-950
     color: 'white',
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
-    transition: 'background-color 0.3s'
+    transition: 'background-color 0.3s',
+    display: 'flex',
+    alignItems: 'center'
   };
 
   const buttonHoverStyle = {
-    backgroundColor: '#D97706' // darker yellow for hover effect
+    backgroundColor: '#1E40AF' // darker blue for hover effect
   };
 
   const inputStyle = {
@@ -180,6 +235,17 @@ function AdminPage() {
     color: 'black' 
   };
 
+  const formStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '10px',
+    justifyContent: 'center' // Center the form elements
+  };
+
+  const iconStyle = {
+    filter: 'invert(100%)' // Change icon color to white
+  };
+
   return (
     <div>
       <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
@@ -187,7 +253,7 @@ function AdminPage() {
       <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
       <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1> 
       <h1 className="mt-50 text-5xl font-bold text-blue-950">Admin Page</h1>
-      <p>Welcome to the Admin Page. This is where you can manage the application.</p>
+      <h1 className="mt-50 text-1xl font-bold text-blue-950">~Welcome to the Admin Page. This is where you can manage the application.~</h1>
       <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1> 
       <div>
       <h1 className="mt-50 text-2xl font-bold text-blue-950">User</h1>
@@ -204,33 +270,84 @@ function AdminPage() {
                 onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
                 onClick={() => handleDeleteUser(user.email)}
               >
+                <img src={deleteIcon} alt="Delete" className="icon" style={{ ...iconStyle, width: '30px', height: '30px', marginRight: '8px' }} />
                 Delete
               </button>
             </li>
           ))}
         </ul>
-        <input
-          type="email"
-          placeholder="Email"
-          value={newUser.email}
-          onChange={e => setNewUser({ ...newUser, email: e.target.value })}
-          style={inputStyle}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={newUser.password}
-          onChange={e => setNewUser({ ...newUser, password: e.target.value })}
-          style={inputStyle}
-        />
-        <button
-          style={buttonStyle}
-          onMouseEnter={(e) => e.target.style.backgroundColor = buttonHoverStyle.backgroundColor}
-          onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
-          onClick={handleAddUser}
-        >
-          Add User
-        </button>
+        <div style={formStyle}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={newUser.email}
+            onChange={e => setNewUser({ ...newUser, email: e.target.value })}
+            style={inputStyle}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={newUser.password}
+            onChange={e => setNewUser({ ...newUser, password: e.target.value })}
+            style={inputStyle}
+          />
+          <button
+            style={buttonStyle}
+            onMouseEnter={(e) => e.target.style.backgroundColor = buttonHoverStyle.backgroundColor}
+            onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
+            onClick={handleAddUser}
+          >
+            Add User
+          </button>
+        </div>
+      </div>
+      <div>
+        <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
+        <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
+        <h1 className="mt-50 text-2xl font-bold text-blue-950">Sellers</h1>
+        <ul>
+          {sellers.map(seller => (
+            <li key={seller.email} style={cardBoxStyle}>
+              <div style={{ backgroundColor: '#f0f0f0', padding: '10px', borderRadius: '5px' }}>
+                <strong>Email:</strong> {seller.email} &nbsp;
+                <strong>Password:</strong> {seller.password}
+              </div>
+              <button
+                style={buttonStyle}
+                onMouseEnter={(e) => e.target.style.backgroundColor = buttonHoverStyle.backgroundColor}
+                onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
+                onClick={() => handleDeleteSeller(seller.email)}
+              >
+                <img src={deleteIcon} alt="Delete" className="icon" style={{ ...iconStyle, width: '30px', height: '30px', marginRight: '8px' }} />
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+        <div style={formStyle}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={newSeller.email}
+            onChange={e => setNewSeller({ ...newSeller, email: e.target.value })}
+            style={inputStyle}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={newSeller.password}
+            onChange={e => setNewSeller({ ...newSeller, password: e.target.value })}
+            style={inputStyle}
+          />
+          <button
+            style={buttonStyle}
+            onMouseEnter={(e) => e.target.style.backgroundColor = buttonHoverStyle.backgroundColor}
+            onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
+            onClick={handleAddSeller}
+          >
+            Add Seller
+          </button>
+        </div>
       </div>
       <div>
       <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
@@ -249,33 +366,36 @@ function AdminPage() {
                 onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
                 onClick={() => handleDeleteAdmin(admin.email)}
               >
+                <img src={deleteIcon} alt="Delete" className="icon" style={{ ...iconStyle, width: '30px', height: '30px', marginRight: '8px' }} />
                 Delete
               </button>
             </li>
           ))}
         </ul>
-        <input
-          type="email"
-          placeholder="Email"
-          value={newAdmin.email}
-          onChange={e => setNewAdmin({ ...newAdmin, email: e.target.value })}
-          style={inputStyle}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={newAdmin.password}
-          onChange={e => setNewAdmin({ ...newAdmin, password: e.target.value })}
-          style={inputStyle}
-        />
-        <button
-          style={buttonStyle}
-          onMouseEnter={(e) => e.target.style.backgroundColor = buttonHoverStyle.backgroundColor}
-          onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
-          onClick={handleAddAdmin}
-        >
-          Add Admin
-        </button>
+        <div style={formStyle}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={newAdmin.email}
+            onChange={e => setNewAdmin({ ...newAdmin, email: e.target.value })}
+            style={inputStyle}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={newAdmin.password}
+            onChange={e => setNewAdmin({ ...newAdmin, password: e.target.value })}
+            style={inputStyle}
+          />
+          <button
+            style={buttonStyle}
+            onMouseEnter={(e) => e.target.style.backgroundColor = buttonHoverStyle.backgroundColor}
+            onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
+            onClick={handleAddAdmin}
+          >
+            Add Admin
+          </button>
+        </div>
       </div>
       <div>
       <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
@@ -286,11 +406,11 @@ function AdminPage() {
             <li key={car.name} style={cardBoxStyle}>
               <div style={{ backgroundColor: '#f0f0f0', padding: '10px', borderRadius: '5px'}}>
                 <strong>Name:</strong> {car.name} &nbsp;
-                <strong>Price:</strong> {car.price} &nbsp;
+                <strong>Price (RM):</strong> {car.price} &nbsp;
                 <strong>Condition:</strong> {car.condition} &nbsp;
                 <strong>Email:</strong> {car.email} &nbsp;
                 <strong>Type:</strong> {car.type} &nbsp;
-                <strong>Mileage:</strong> {car.mileage} &nbsp;
+                <strong>Mileage (KM):</strong> {car.mileage} &nbsp;
                 <strong>Transmission:</strong> {car.transmission}
               </div>
               <button
@@ -299,89 +419,92 @@ function AdminPage() {
                 onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
                 onClick={() => handleDeleteCar(car.name)}
               >
+                <img src={deleteIcon} alt="Delete" className="icon" style={{ ...iconStyle, width: '30px', height: '30px', marginRight: '8px' }} />
                 Delete
               </button>
             </li>
           ))}
         </ul>
-        <input
-          type="text"
-          placeholder="Name"
-          value={newCar.name}
-          onChange={e => setNewCar({ ...newCar, name: e.target.value })}
-          style={inputStyle}
-        />
-        <input
-          type="text"
-          placeholder="Price"
-          value={newCar.price}
-          onChange={e => setNewCar({ ...newCar, price: e.target.value })}
-          style={inputStyle}
-        />
-        <select
-          value={newCar.condition}
-          onChange={e => setNewCar({ ...newCar, condition: e.target.value })}
-          style={inputStyle}
-        >
-          <option value="Excellent Condition">Excellent Condition</option>
-          <option value="Good Condition">Good Condition</option>
-          <option value="Fair Condition">Fair Condition</option>
-        </select>
-        <input
-          type="email"
-          placeholder="Email"
-          value={newCar.email}
-          onChange={e => setNewCar({ ...newCar, email: e.target.value })}
-          style={inputStyle}
-        />
-        <select
-          value={newCar.type}
-          onChange={e => setNewCar({ ...newCar, type: e.target.value })}
-          style={inputStyle}
-        >
-          <option value="Sedan">Sedan</option>
-          <option value="SUV">SUV</option>
-          <option value="Hatchback">Hatchback</option>
-          <option value="Convertible">Convertible</option>
-        </select>
-        <input
-          type="text"
-          placeholder="Mileage"
-          value={newCar.mileage}
-          onChange={e => setNewCar({ ...newCar, mileage: e.target.value })}
-          style={inputStyle}
-        />
-        <select
-          value={newCar.transmission}
-          onChange={e => setNewCar({ ...newCar, transmission: e.target.value })}
-          style={inputStyle}
-        >
-          <option value="Manual">Manual</option>
-          <option value="Auto">Auto</option>
-        </select>
-        <input
-          type="text"
-          placeholder="Image URL"
-          value={newImageUrl}
-          onChange={e => setNewImageUrl(e.target.value)}
-          style={inputStyle}
-        />
-        <button
-          style={buttonStyle}
-          onMouseEnter={(e) => e.target.style.backgroundColor = buttonHoverStyle.backgroundColor}
-          onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
-          onClick={handleAddImageUrl}
-        >
-          Add Image URL
-        </button>
-        <button
-          style={buttonStyle}
-          onMouseEnter={(e) => e.target.style.backgroundColor = buttonHoverStyle.backgroundColor}
-          onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
-          onClick={handleAddCar}
-        >
-          Add Car
-        </button>
+        <div style={formStyle}>
+          <input
+            type="text"
+            placeholder="Name"
+            value={newCar.name}
+            onChange={e => setNewCar({ ...newCar, name: e.target.value })}
+            style={inputStyle}
+          />
+          <input
+            type="text"
+            placeholder="Price"
+            value={newCar.price}
+            onChange={e => setNewCar({ ...newCar, price: e.target.value })}
+            style={inputStyle}
+          />
+          <select
+            value={newCar.condition}
+            onChange={e => setNewCar({ ...newCar, condition: e.target.value })}
+            style={inputStyle}
+          >
+            <option value="Excellent Condition">Excellent Condition</option>
+            <option value="Good Condition">Good Condition</option>
+            <option value="Fair Condition">Fair Condition</option>
+          </select>
+          <input
+            type="email"
+            placeholder="Email"
+            value={newCar.email}
+            onChange={e => setNewCar({ ...newCar, email: e.target.value })}
+            style={inputStyle}
+          />
+          <select
+            value={newCar.type}
+            onChange={e => setNewCar({ ...newCar, type: e.target.value })}
+            style={inputStyle}
+          >
+            <option value="Sedan">Sedan</option>
+            <option value="SUV">SUV</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Convertible">Convertible</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Mileage"
+            value={newCar.mileage}
+            onChange={e => setNewCar({ ...newCar, mileage: e.target.value })}
+            style={inputStyle}
+          />
+          <select
+            value={newCar.transmission}
+            onChange={e => setNewCar({ ...newCar, transmission: e.target.value })}
+            style={inputStyle}
+          >
+            <option value="Manual">Manual</option>
+            <option value="Auto">Auto</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Image URL"
+            value={newImageUrl}
+            onChange={e => setNewImageUrl(e.target.value)}
+            style={inputStyle}
+          />
+          <button
+            style={buttonStyle}
+            onMouseEnter={(e) => e.target.style.backgroundColor = buttonHoverStyle.backgroundColor}
+            onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
+            onClick={handleAddImageUrl}
+          >
+            Add Image URL
+          </button>
+          <button
+            style={buttonStyle}
+            onMouseEnter={(e) => e.target.style.backgroundColor = buttonHoverStyle.backgroundColor}
+            onMouseLeave={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
+            onClick={handleAddCar}
+          >
+            Add Car
+          </button>
+        </div>
       </div>
     </div>
   );

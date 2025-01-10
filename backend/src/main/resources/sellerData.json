@@ -1,0 +1,46 @@
+[
+  {
+    "email": "ownerA@example.com",
+    "password": "445631"
+  },
+  {
+    "email": "ownerB@example.com",
+    "password": "passwordB"
+  },
+  {
+    "email": "ownerC@example.com",
+    "password": "passwordC"
+  },
+  {
+    "email": "ownerD@example.com",
+    "password": "passwordD"
+  },
+  {
+    "email": "ownerE@example.com",
+    "password": "passwordE"
+  },
+  {
+    "email": "ownerF@example.com",
+    "password": "passwordF"
+  },
+  {
+    "email": "ownerG@example.com",
+    "password": "passwordG"
+  },
+  {
+    "email": "ownerH@example.com",
+    "password": "passwordH"
+  },
+  {
+    "email": "ownerI@example.com",
+    "password": "passwordI"
+  },
+  {
+    "email": "ownerJ@example.com",
+    "password": "passwordJ"
+  },
+  {
+    "email": "testSeller@gmail.com",
+    "password": "445631"
+  }
+]

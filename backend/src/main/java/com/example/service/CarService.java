@@ -52,6 +52,10 @@ public class CarService {
         cars.removeIf(car -> car.getName().equals(name));
     }
 
+    public void deleteCarsBySellerEmail(String email) {
+        cars.removeIf(car -> car.getEmail().equals(email));
+    }
+
     public void saveCarsToFile() throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter(dataFilePath)) {

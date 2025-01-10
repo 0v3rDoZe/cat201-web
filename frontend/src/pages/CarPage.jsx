@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import CarCard from '../components/CarCard';
 import '../styles/styles.css'; // Import the styles
+import { useNavigate } from 'react-router-dom';
+
 
 function CarPage() {
   const [cars, setCars] = useState([]);
@@ -8,7 +10,9 @@ function CarPage() {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [conditionFilter, setConditionFilter] = useState('All');
+  const [transmissionFilter, setTransmissionFilter] = useState('All'); // Add transmission filter state
   const [showPriceRange, setShowPriceRange] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:9090/api/cars')
@@ -20,8 +24,9 @@ function CarPage() {
   const filteredCars = cars.filter(car => {
     const matchesType = filter === 'All' || car.type === filter;
     const matchesCondition = conditionFilter === 'All' || car.condition === conditionFilter;
+    const matchesTransmission = transmissionFilter === 'All' || car.transmission === transmissionFilter; // Add transmission filter logic
     const matchesPrice = (!minPrice || car.price >= parseFloat(minPrice)) && (!maxPrice || car.price <= parseFloat(maxPrice));
-    return matchesType && matchesCondition && matchesPrice;
+    return matchesType && matchesCondition && matchesTransmission && matchesPrice;
   });
 
   return (
@@ -84,11 +89,21 @@ function CarPage() {
             <option value="Fair Condition">Fair Condition</option>
           </select>
         </label>
-      </div>  
+      </div>
+      <div className="transmission-filter mt-4"> {/* Add transmission filter UI */}
+        <label>
+          Transmission:
+          <select value={transmissionFilter} onChange={(e) => setTransmissionFilter(e.target.value)} className="ml-2 p-1 border rounded">
+            <option value="All">All</option>
+            <option value="Manual">Manual</option>
+            <option value="Auto">Auto</option>
+          </select>
+        </label>
+      </div>
       <div className="car-list mt-8">
         {filteredCars.map(car => (
           <CarCard
-            key={car.id}
+            key={car.name}
             images={car.images}
             name={car.name}
             price={car.price}
@@ -97,6 +112,7 @@ function CarPage() {
             type={car.type}
             mileage={car.mileage}
             transmission={car.transmission}
+            onPurchase={() => navigate('/purchase', { state: { car } })}
           />
         ))}
       </div>
