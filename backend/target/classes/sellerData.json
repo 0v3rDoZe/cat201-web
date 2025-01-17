@@ -1,46 +1,18 @@
 [
   {
-    "email": "ownerA@example.com",
+    "email": "redwan@gmail.com",
     "password": "445631"
   },
   {
-    "email": "ownerB@example.com",
-    "password": "passwordB"
+    "email": "arif@gmail.com",
+    "password": "arif2345"
   },
   {
-    "email": "ownerC@example.com",
-    "password": "passwordC"
+    "email": "faris@gmail.com",
+    "password": "faris3456"
   },
   {
-    "email": "ownerD@example.com",
-    "password": "passwordD"
-  },
-  {
-    "email": "ownerE@example.com",
-    "password": "passwordE"
-  },
-  {
-    "email": "ownerF@example.com",
-    "password": "passwordF"
-  },
-  {
-    "email": "ownerG@example.com",
-    "password": "passwordG"
-  },
-  {
-    "email": "ownerH@example.com",
-    "password": "passwordH"
-  },
-  {
-    "email": "ownerI@example.com",
-    "password": "passwordI"
-  },
-  {
-    "email": "ownerJ@example.com",
-    "password": "passwordJ"
-  },
-  {
-    "email": "testSeller@gmail.com",
-    "password": "445631"
+    "email": "hafiz@gmail.com",
+    "password": "hafiz4567"
   }
 ]

@@ -1,18 +1,19 @@
 [
   {
-    "carName": "Car K",
-    "price": 15000.0,
-    "condition": "Excellent Condition",
-    "ownerEmail": "ownerA@example.com",
-    "type": "Sedan",
-    "mileage": 2000.0,
-    "transmission": "Manual",
+    "carName": "Honda Jazz 2013",
+    "price": 21000.0,
+    "condition": "Fair Condition",
+    "ownerEmail": "redwan@gmail.com",
+    "type": "Hatchback",
+    "mileage": 16000.0,
+    "transmission": "Auto",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/1994_Mazda_RX-7_R2_in_Vintage_Red%2C_front_left_%28Lime_Rock%29.jpg/1920px-1994_Mazda_RX-7_R2_in_Vintage_Red%2C_front_left_%28Lime_Rock%29.jpg"
-      ,"https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Toyota_Supra_%282492707827%29.jpg/1280px-Toyota_Supra_%282492707827%29.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/2017_Honda_Jazz_EX_Navi_i-VTEC_CVT_1.3_Front.jpg/1920px-2017_Honda_Jazz_EX_Navi_i-VTEC_CVT_1.3_Front.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/2017_Honda_Jazz_EX_Navi_i-VTEC_CVT_1.3_Rear.jpg/1920px-2017_Honda_Jazz_EX_Navi_i-VTEC_CVT_1.3_Rear.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Honda_Jazz_-_wn%C4%99trze_%28MSP16%29.jpg/1280px-Honda_Jazz_-_wn%C4%99trze_%28MSP16%29.jpg"
     ],
-    "userName": "Matthew Khoo",
-    "userEmail": "user@example.com",
+    "userName": "Adam Afiq",
+    "userEmail": "adam@gmail.com",
     "paymentMethod": "Cash on Delivery",
     "paymentStatus": "Pending",
     "cardNumber": "",

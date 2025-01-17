@@ -4,6 +4,7 @@ import SellerCarCard from '../components/SellerCarCard';
 import '../styles/styles.css'; // Import the styles
 import rejectIcon from '../assets/bxs-user-x.svg';
 import addCarIcon from '../assets/bx-folder-plus.svg';
+import image from '../assets/sell2.jpg'; // Ensure you have images in the assets folder
 
 function SellerPage() {
   const [cars, setCars] = useState([]);
@@ -90,7 +91,7 @@ function SellerPage() {
       return;
     }
     try {
-      const response = await fetch('http://localhost:9090/api/products', {
+      const response = await fetch('http://localhost:9090/api/cars', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -144,6 +145,12 @@ function SellerPage() {
 
   return (
     <div className="seller-page-container">
+      <div className="relative" style={{ height: '600px' }}>
+        <img src={image} alt="Sell Cars" className="absolute top-0 left-0 w-full h-full object-cover" />
+        <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
+          <h1 className="mt-50 text-6xl font-bold text-white">Seller Dashboard</h1>
+        </div>
+      </div>
       <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
       <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
       <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1> 

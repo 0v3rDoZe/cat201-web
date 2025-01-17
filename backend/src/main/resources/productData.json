@@ -1,132 +1,198 @@
 [
   {
-    "name": "Car A",
-    "price": 10.99,
-    "condition": "Excellent Condition",
-    "email": "ownerA@example.com",
-    "type": "Sedan",
-    "mileage": 5000,
-    "transmission": "Auto",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983_Toyota_Corolla_Levin.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
-    ]
-  },
-  {
-    "name": "Car B",
-    "price": 12.99,
+    "name": "Honda CRV 2001",
+    "price": 30000.0,
     "condition": "Good Condition",
-    "email": "ownerB@example.com",
+    "email": "redwan@gmail.com",
     "type": "SUV",
     "mileage": 10000,
     "transmission": "Manual",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983_Toyota_Corolla_Levin.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/2002_Honda_CR-V_%28RD7_MY02%29_Sport_wagon_%282015-07-09%29_01.jpg/1280px-2002_Honda_CR-V_%28RD7_MY02%29_Sport_wagon_%282015-07-09%29_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c4/Honda_cr-v_rd4_fullmarkil_1_r_%28cropped%29.jpg"
     ]
   },
   {
-    "name": "Car C",
-    "price": 9.99,
+    "name": "Mazda CX-5 2012",
+    "price": 40000.0,
     "condition": "Fair Condition",
-    "email": "ownerC@example.com",
-    "type": "Hatchback",
+    "email": "redwan@gmail.com",
+    "type": "SUV",
     "mileage": 15000,
     "transmission": "Auto",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983_Toyota_Corolla_Levin.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Mazda_CX-5_2.0_SKYACTIV-G_AWD_Sports-Line_%E2%80%93_Frontansicht%2C_3._September_2012%2C_D%C3%BCsseldorf.jpg/1920px-Mazda_CX-5_2.0_SKYACTIV-G_AWD_Sports-Line_%E2%80%93_Frontansicht%2C_3._September_2012%2C_D%C3%BCsseldorf.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Mazda_CX-5_2.0_SKYACTIV-G_AWD_Sports-Line_%E2%80%93_Heckansicht%2C_3._September_2012%2C_D%C3%BCsseldorf.jpg/1920px-Mazda_CX-5_2.0_SKYACTIV-G_AWD_Sports-Line_%E2%80%93_Heckansicht%2C_3._September_2012%2C_D%C3%BCsseldorf.jpg"
     ]
   },
   {
-    "name": "Car D",
-    "price": 8.99,
+    "name": "Toyota Highlander 2003",
+    "price": 20000.0,
     "condition": "Fair Condition",
-    "email": "ownerD@example.com",
-    "type": "Hatchback",
+    "email": "redwan@gmail.com",
+    "type": "SUV",
     "mileage": 20000,
     "transmission": "Manual",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/2003-2007_Toyota_Kluger_%28MCU28R%29_Grande_wagon_%282011-06-15%29_01.jpg/1920px-2003-2007_Toyota_Kluger_%28MCU28R%29_Grande_wagon_%282011-06-15%29_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/2003-2007_Toyota_Kluger_%28MCU28R%29_Grande_wagon_%282011-06-15%29_02.jpg/1920px-2003-2007_Toyota_Kluger_%28MCU28R%29_Grande_wagon_%282011-06-15%29_02.jpg"
     ]
   },
   {
-    "name": "Car E",
-    "price": 15.99,
+    "name": "Hyundai Tuscon 2006",
+    "price": 25000.0,
     "condition": "Good Condition",
-    "email": "ownerE@example.com",
-    "type": "Convertible",
-    "mileage": 3000,
+    "email": "arif@gmail.com",
+    "type": "SUV",
+    "mileage": 40000,
     "transmission": "Auto",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/2008-2010_Hyundai_Tucson_City_SX_wagon_01.jpg/1920px-2008-2010_Hyundai_Tucson_City_SX_wagon_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/2007-2010_Hyundai_Tucson_City_Elite_wagon_02.jpg/1920px-2007-2010_Hyundai_Tucson_City_Elite_wagon_02.jpg"
     ]
   },
   {
-    "name": "Car F",
-    "price": 7.99,
+    "name": "Toyota Land Cruiser 2011",
+    "price": 30000.0,
     "condition": "Fair Condition",
-    "email": "ownerF@example.com",
-    "type": "Coupe",
+    "email": "faris@gmail.com",
+    "type": "SUV",
     "mileage": 25000,
     "transmission": "Manual",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/2013_Toyota_Land_Cruiser_%28VDJ200R_MY13%29_Sahara_wagon_%282015-07-24%29_01.jpg/1280px-2013_Toyota_Land_Cruiser_%28VDJ200R_MY13%29_Sahara_wagon_%282015-07-24%29_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/2013_Toyota_Land_Cruiser_%28VDJ200R_MY13%29_Sahara_wagon_%282015-07-24%29_02.jpg/1280px-2013_Toyota_Land_Cruiser_%28VDJ200R_MY13%29_Sahara_wagon_%282015-07-24%29_02.jpg"
     ]
   },
   {
-    "name": "Car G",
-    "price": 11.99,
+    "name": "Kia Mohave 2008",
+    "price": 23000.0,
     "condition": "Excellent Condition",
-    "email": "ownerG@example.com",
-    "type": "Convertible",
-    "mileage": 6000,
+    "email": "hafiz@gmail.com",
+    "type": "SUV",
+    "mileage": 30000,
     "transmission": "Auto",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/3080411343_b1aca1f04d_o_-_Kopie.jpg/1920px-3080411343_b1aca1f04d_o_-_Kopie.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/3081251428_996ee83110_o_-_Kopie.jpg/1280px-3081251428_996ee83110_o_-_Kopie.jpg"
     ]
   },
   {
-    "name": "Car H",
-    "price": 13.99,
+    "name": "Toyota Corolla 2014",
+    "price": 20000.0,
     "condition": "Good Condition",
-    "email": "ownerH@example.com",
-    "type": "SUV",
+    "email": "redwan@gmail.com",
+    "type": "Hatchback",
     "mileage": 11000,
     "transmission": "Manual",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/2007-2010_Toyota_Corolla_%28ZRE152R%29_Ascent_sedan_%282011-04-02%29.jpg/1920px-2007-2010_Toyota_Corolla_%28ZRE152R%29_Ascent_sedan_%282011-04-02%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/2007-2010_Toyota_Corolla_%28ZRE152R%29_Ascent_sedan_01.jpg/1920px-2007-2010_Toyota_Corolla_%28ZRE152R%29_Ascent_sedan_01.jpg"
     ]
   },
   {
-    "name": "Car I",
-    "price": 10.49,
+    "name": "Hyundai i20n 2012",
+    "price": 15000.0,
     "condition": "Fair Condition",
-    "email": "ownerI@example.com",
-    "type": "Hatchback",
-    "mileage": 16000,
-    "transmission": "Auto",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
-    ]
-  },
-  {
-    "name": "Car J",
-    "price": 9.49,
-    "condition": "Fair Condition",
-    "email": "ownerJ@example.com",
+    "email": "arif@gmail.com",
     "type": "Hatchback",
     "mileage": 21000,
     "transmission": "Manual",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/1983_Toyota_Corolla_Levin.jpg/1920px-1983-Toyota_Corolla_Levin.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Toyota_Sprinter_Trueno_Black_Limited_rear.jpg/1920px-Toyota_Sprinter_Trueno_Black_Limited_rear.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Hyundai_i20_1.2_Comfort_front_20100617.jpg/1280px-Hyundai_i20_1.2_Comfort_front_20100617.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Hyundai_i20_1.2_Comfort_rear_20100617.jpg/1920px-Hyundai_i20_1.2_Comfort_rear_20100617.jpg"
+    ]
+  },
+  {
+    "name": "Suzuki Swift 2010",
+    "price": 25000.0,
+    "condition": "Good Condition",
+    "email": "faris@gmail.com",
+    "type": "Hatchback",
+    "mileage": 21000,
+    "transmission": "Auto",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/2007_Suzuki_Swift_Sport_1.6_Front.jpg/1920px-2007_Suzuki_Swift_Sport_1.6_Front.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/2007_Suzuki_Swift_Sport_1.6_Rear.jpg/1920px-2007_Suzuki_Swift_Sport_1.6_Rear.jpg"
+    ]
+  },
+  {
+    "name": "Ford Fiesta 2008",
+    "price": 15000.0,
+    "condition": "Good Condition",
+    "email": "hafiz@gmail.com",
+    "type": "Hatchback",
+    "mileage": 21000,
+    "transmission": "Auto",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/2009-2010_Ford_Fiesta_%28WS%29_Zetec_5-door_hatchback_01.jpg/1920px-2009-2010_Ford_Fiesta_%28WS%29_Zetec_5-door_hatchback_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/2009-2010_Ford_Fiesta_%28WS%29_Zetec_5-door_hatchback_02.jpg/1920px-2009-2010_Ford_Fiesta_%28WS%29_Zetec_5-door_hatchback_02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/2010_Ford_Fiesta_interior_II.JPG/1280px-2010_Ford_Fiesta_interior_II.JPG"
+    ]
+  },
+  {
+    "name": "Mazda Miata 2019",
+    "price": 180000.0,
+    "condition": "Excellent Condition",
+    "email": "redwan@gmail.com",
+    "type": "Convertible",
+    "mileage": 21000,
+    "transmission": "Manual",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/2023_Mazda_MX-5_2.0_Skyactiv-G_Exclusive_Line_at_Green4Motor_Coventry_02.jpg/1920px-2023_Mazda_MX-5_2.0_Skyactiv-G_Exclusive_Line_at_Green4Motor_Coventry_02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/2023_Mazda_MX-5_2.0_Skyactiv-G_Exclusive_Line_at_Green4Motor_Coventry_03.jpg/1920px-2023_Mazda_MX-5_2.0_Skyactiv-G_Exclusive_Line_at_Green4Motor_Coventry_03.jpg"
+    ]
+  },
+  {
+    "name": "Mini Cooper R50 2001",
+    "price": 170000.0,
+    "condition": "Excellent Condition",
+    "email": "arif@gmail.com",
+    "type": "Convertible",
+    "mileage": 21000,
+    "transmission": "Auto",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Mini_Cooper_S_Cabriolet_%28R52%29_%E2%80%93_Frontansicht%2C_25._September_2011%2C_Mettmann.jpg/1920px-Mini_Cooper_S_Cabriolet_%28R52%29_%E2%80%93_Frontansicht%2C_25._September_2011%2C_Mettmann.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Mini_Cooper_S_Cabriolet_%28R52%29_%E2%80%93_Heckansicht%2C_25._September_2011%2C_Mettmann.jpg/1920px-Mini_Cooper_S_Cabriolet_%28R52%29_%E2%80%93_Heckansicht%2C_25._September_2011%2C_Mettmann.jpg"
+    ]
+  },
+  {
+    "name": "Honda Civic 1992",
+    "price": 9000.0,
+    "condition": "Fair Condition",
+    "email": "redwan@gmail.com",
+    "type": "Sedan",
+    "mileage": 21000,
+    "transmission": "Manual",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/1993-1995_Honda_Civic_GLi_3-door_hatchback_%282011-11-17%29_01.jpg/1920px-1993-1995_Honda_Civic_GLi_3-door_hatchback_%282011-11-17%29_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/1993-1995_Honda_Civic_GLi_3-door_hatchback_%282011-11-17%29_02.jpg/1920px-1993-1995_Honda_Civic_GLi_3-door_hatchback_%282011-11-17%29_02.jpg"
+    ]
+  },
+  {
+    "name": "Hyundai Elantra 2010",
+    "price": 26000.0,
+    "condition": "Excellent Condition",
+    "email": "arif@gmail.com",
+    "type": "Sedan",
+    "mileage": 21000,
+    "transmission": "Auto",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/2012_Hyundai_Elantra_%28MD2%29_Elite_sedan_%282015-07-03%29_01.jpg/1920px-2012_Hyundai_Elantra_%28MD2%29_Elite_sedan_%282015-07-03%29_01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/2012_Hyundai_Elantra_%28MD2%29_Elite_sedan_%282015-07-03%29_02_%28cropped%29.jpg/1920px-2012_Hyundai_Elantra_%28MD2%29_Elite_sedan_%282015-07-03%29_02_%28cropped%29.jpg"
+    ]
+  },
+  {
+    "name": "Mazda 3 2007",
+    "price": 38000.0,
+    "condition": "Fair Condition",
+    "email": "faris@gmail.com",
+    "type": "Sedan",
+    "mileage": 21000,
+    "transmission": "Auto",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/2018_Mazda3_Touring%2C_Rear_Right.jpg/1920px-2018_Mazda3_Touring%2C_Rear_Right.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/2006-2008_Mazda_3_%28BK_Series_2%29_Maxx_Sport_sedan_%282011-03-10%29.jpg/1920px-2006-2008_Mazda_3_%28BK_Series_2%29_Maxx_Sport_sedan_%282011-03-10%29.jpg"
     ]
   }
 ]

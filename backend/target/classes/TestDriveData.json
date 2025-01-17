@@ -1,23 +1,16 @@
 [
   {
-    "name": "Matthew Khoo",
-    "email": "user@example.com",
-    "carModel": "Car B",
-    "date": "2025-01-22",
-    "ownerEmail": "ownerB@example.com"
-  },
-  {
-    "name": "Matthew Khoo",
-    "email": "user@example.com",
-    "carModel": "Car C",
-    "date": "2025-01-23",
-    "ownerEmail": "ownerC@example.com"
-  },
-  {
-    "name": "Matthew Khoo",
-    "email": "user@example.com",
-    "carModel": "Car A",
+    "name": "Adam Afiq",
+    "email": "adam@gmail.com",
+    "carModel": "Mazda CX-5 2012",
     "date": "2025-01-30",
-    "ownerEmail": "ownerA@example.com"
+    "ownerEmail": "redwan@gmail.com"
+  },
+  {
+    "name": "Adam Afiq",
+    "email": "adam@gmail.com",
+    "carModel": "Honda CRV 2001",
+    "date": "2025-01-31",
+    "ownerEmail": "redwan@gmail.com"
   }
 ]

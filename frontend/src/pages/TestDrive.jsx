@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/styles.css'; // Import the styles
 import showDetailsIcon from '../assets/bx-file.svg';
+import video from '../assets/video5.mp4';
 
 function TestDrive() {
   const location = useLocation();
@@ -38,6 +39,11 @@ function TestDrive() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!carModel) {
+      setErrorMessage('Please select a car from the car list');
+      return;
+    }
+
     const testDriveDetails = { name, email, carModel, date, ownerEmail };
 
     const selectedDate = new Date(date);
@@ -103,13 +109,15 @@ function TestDrive() {
 
   return (
     <div className="test-drive-container">
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
-      <h1 className="mt-50 text-6xl font-bold text-blue-950">Test Drive</h1>
-      <h1 className="mt-50 text-2xl font-bold text-blue-950">~Experience the thrill of driving~</h1>
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
+      <div className="relative" style={{ height: '350px' }}>
+        <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover">
+          <source src={video} type="video/mp4" />
+        </video>
+        <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
+          <h1 className="mt-50 text-6xl font-bold text-blue-950">Test Drive</h1>
+          <h1 className="mt-50 text-2xl font-bold text-blue-950">~Experience the thrill of driving~</h1>
+        </div>
+      </div>
       <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
       <div className="flex flex-col items-start mt-12 pl-28">
         <div className="text-left text-4xl text-blue-950">[ Test Drive Schedule ]</div>

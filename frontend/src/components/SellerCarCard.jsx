@@ -45,13 +45,13 @@ function SellerCarCard({ images, name, price, condition, email, type, mileage, t
   return (
     <div className="car-card bg-yellow-200 flex flex-col justify-between">
       <div>
-        <div className="car-card-image-container" style={{ width: '100%', height: '220px', overflow: 'hidden', position: 'relative' }}>
+        <div className="car-card-image-container" style={{ width: '100%', height: '285px', overflow: 'hidden', position: 'relative' }}>
           <button onClick={handlePrevImage} className="car-card-button" style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)' }}>&#9664;</button>
           <img src={images[currentImageIndex]} alt={name} className="car-card-image" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <button onClick={handleNextImage} className="car-card-button" style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)' }}>&#9654;</button>
         </div>
         <div className="car-card-info text-left">
-          <h3 className="text-center">{name}</h3>
+          <h3 className="text-center" style={{ color: '#6E260E', fontSize: '1.2rem', fontWeight: 'bold' }}>{name}</h3>
           <p>Price: RM{price}</p>
           <p>Condition: {condition}</p>
           <p>Type: {type}</p>

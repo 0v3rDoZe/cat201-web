@@ -163,6 +163,7 @@ function App() {
                 <Link to="/">Home</Link>
                 <Link to="/car-list">Car List</Link>
                 <Link to="/test-drive">Test Drive</Link>
+                <Link to="/purchases">Purchases</Link> {/* Add quick link for Purchases */}
               </nav>
             </div>
           )}

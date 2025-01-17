@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/styles.css'; // Import the styles
+import image from '../assets/sell1.jpg'; // Ensure you have images in the assets folder
 
 function SoldCarPage() {
   const [soldCars, setSoldCars] = useState([]);
@@ -17,12 +18,18 @@ function SoldCarPage() {
 
   return (
     <div className="sold-car-page-container">
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
+      <div className="relative" style={{ height: '450px' }}>
+        <img src={image} alt="Sold Cars" className="absolute top-0 left-0 w-full h-full object-cover" />
+        <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
+          <h1 className="mt-50 text-6xl font-bold text-white">Cars Sold</h1>
+          <h1 className="mt-50 text-2xl font-bold text-white">~Cars that you’ve proudly sold~</h1>
+        </div>
+      </div>
       <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1> 
-      <h1 className="mt-50 text-6xl font-bold text-blue-950">Cars Sold</h1>
-      <h1 className="mt-50 text-2xl font-bold text-blue-950">~Someone's making bank~</h1>
+      <h1 className="mt-50 text-1xl font-bold text-blue-950">Looking for a quality second-hand car that’s already found its new owner? Here’s a showcase of </h1>
+      <h1 className="mt-50 text-1xl font-bold text-blue-950">vehicles that have been successfully sold by yours truly. From reliable sedans </h1>
+      <h1 className="mt-50 text-1xl font-bold text-blue-950">and spacious SUVs to sporty convertibles, these cars</h1>
+      <h1 className="mt-50 text-1xl font-bold text-blue-950">have been chosen by satisfied buyers.</h1>
       {soldCars.length > 0 ? (
         <div className="car-list mt-8">
           {soldCars.map((car, index) => (

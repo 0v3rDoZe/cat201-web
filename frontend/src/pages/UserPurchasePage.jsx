@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import video from '../assets/video4.mp4';
 import '../styles/styles.css'; // Import the styles
 
 function UserPurchasePage() {
@@ -17,20 +18,21 @@ function UserPurchasePage() {
 
   return (
     <div className="purchased-car-page-container">
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
-      <h1 className="mt-50 text-6xl font-bold text-blue-950">Purchased Car</h1>
-      <h1 className="mt-50 text-2xl font-bold text-blue-950">~Your journey begins here~</h1>
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
-      <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
+      <div className="relative" style={{ height: '350px' }}>
+        <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover">
+          <source src={video} type="video/mp4" />
+        </video>
+        <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
+          <h1 className="mt-50 text-6xl font-bold text-blue-950">Purchased Car</h1>
+          <h1 className="mt-50 text-2xl font-bold text-blue-950">~Your journey begins here~</h1>
+        </div>
+      </div>
       <div className="flex flex-col items-start mt-12 pl-28">
         <div className="text-left text-4xl text-blue-950">[ Purchased Car List ]</div>
         <h1 className="mt-50 text-1xl font-bold text-blue-950">View all the second-hand cars you've successfully purchased in one place! </h1>
         <h1 className="mt-50 text-1xl font-bold text-blue-950">Easily access detailed information about each vehicle, including purchase date, car model, and price. </h1>
         <h1 className="mt-50 text-1xl font-bold text-blue-950">Keep track of your ownership history and manage post-sale details conveniently with just a click! </h1>
-        <h1 className="mt-50 text-4xl font-bold text-orange-50"></h1>
+        <h1 className="mt-50 text-4xl font-bold text-orange-50">.</h1>
       </div>
       {purchasedCars.length > 0 ? (
         <div className="car-list mt-8">
@@ -39,7 +41,7 @@ function UserPurchasePage() {
           ))}
         </div>
       ) : (
-        <p className="text-white">You have not purchased any cars yet.</p>
+        <p className="text-black">You have not purchased any cars yet.</p>
       )}
     </div>
   );
